@@ -74,7 +74,7 @@
               Departure date:
             </div>
             <div class="col col-10.5" class="calendarone">
-             <input onchange="showDate(this.value)" type="date" class="date" class="form-control" id="position" class="position" name="Departure date" style="text-transform:uppercase">
+             <input onchange="showDate(this.value)" type="date" class="date" class="form-control" id="position" class="position" id="txtDate" name="txtDate" name="Departure date" style="text-transform:uppercase">
                 <div id="time"></div>
 
             </div>
@@ -84,7 +84,7 @@
               Return Date:
             </div>
             <div class="col col-10.5">
-             <input onchange="showDatetwo(this.value)" type="date" class="date" class="form-control" id="position" name="Return Date" style="text-transform:uppercase"/>
+             <input onchange="showDate(this.value)" type="date" class="date" class="form-control" id="position" class="position" id="txttwoDate" name="txttwoDate" name="Return date" style="text-transform:uppercase"/>
                 <div id="timetwo"></div>
             </div>
         </div>
@@ -330,9 +330,18 @@
                 <li class="disclaimer">Departure time from Polokwane to Gauteng is at 05:30am Mondays to Fridays and 04:15am on Sundays.</li>
                 <li class="disclaimer">If you are not contacted or responded to within 2 hours of booking, please contact the office or request a callback.</li>
             </ul>
-            
 
-        <script>
+<script type="text/javascript">
+    var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("txtDate")[0].setAttribute('min', today);
+</script>
+
+<script type="text/javascript">
+    var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("txttwoDate")[0].setAttribute('min', today);
+</script>
+            
+<script>
 function myFunction() {
   alert("Thank you for booking with us. You will be directed to our whatsApp line. Kindly text \"BOOKED\" to indicate your booking");
 }
